@@ -1,0 +1,92 @@
+*{
+    box-sizing: border-box;
+}
+body,html{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: #000957bf;
+    position: relative;
+}
+.main{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+.main>button{
+    font-size: 18px;
+    padding: 10px 20px;
+    margin-left: 30px;
+    background-color: #000;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+}
+.main>button:hover{
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+#info{
+    width: 420px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 15px;
+}
+.notif{
+    width: 100%;
+    height: 65px;
+    background-color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 30px 15px;
+    box-shadow: 0 0 20px rgba(31, 190, 179, 0.5);
+    position: relative;
+    display: flex;
+    align-items: center;
+    transform: translateX(100%);
+    animation: Moveleft 0.5s linear forwards;
+}
+@keyframes Moveleft{
+    100%{
+        transform: translateX(0);
+    }
+}
+.notif i{
+    margin:0 20px;
+    font-size: 30px;
+    color: green;
+}
+.notif::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-color: green;
+    animation: bar 5s linear forwards;
+}
+@keyframes bar{
+    100%{
+         width: 0;
+    }
+}
+.error::after{
+    background-color: red;
+}
+.invalid::after{
+    background: orange;
+}
+.notif.error i{
+    color: red;
+}
+.notif.invalid i{
+    color: orange;
+}
